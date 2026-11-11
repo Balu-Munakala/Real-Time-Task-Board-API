@@ -29,7 +29,7 @@ func Load() (*Config, error) {
 		LogLevel:  getEnv("LOG_LEVEL", "INFO"),
 	}
 
-	if cfg.JwtSecret == "" {
+	if cfg.JwtSecret == "" || cfg.DbURL == "" {
 		return nil, fmt.Errorf("JWT_SECRET must not be empty")
 	}
 
